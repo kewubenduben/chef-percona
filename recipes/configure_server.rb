@@ -27,6 +27,13 @@ template "/etc/init.d/mysql" do
   mode 0755
 end
 
+# init.d sometimes needs modification to
+# a long time for high-mem percona start/stop
+template "/etc/init.d/mysql" do
+  source "mysql.initd.erb"
+  mode 0755
+end
+
 # this is where we dump sql templates for replication, etc.
 directory "/etc/mysql" do
   owner "root"

@@ -105,7 +105,8 @@ query_cache_size  = <%= node["percona"]["server"]["query_cache_size"] %>
 # Be aware that this log type is a performance killer.
 # As of 5.1 you can enable the  at runtime!
 #log_type           = FILE
-#general_log    = /var/log/mysql/mysql.log
+#general_log_file = /var/log/mysql/mysql.log
+#general_log = 1
 #
 # Error logging goes to syslog due to /etc/mysql/conf.d/mysqld_safe_syslog.cnf.
 #

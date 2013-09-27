@@ -204,7 +204,8 @@ query_cache_limit = <%= node["percona"]["server"]["query_cache_limit"] %>
 # Be aware that this log type is a performance killer.
 # As of 5.1 you can enable the  at runtime!
 #log_type           = FILE
-#general_log    = /var/log/mysql/mysql.log
+#general_log_file = /var/log/mysql/mysql.log
+#general_log = 1
 
 # sync_binlog ensures that all writes to the binary log are immediately
 # flushed to disk.  This is important, especially for replication, because
