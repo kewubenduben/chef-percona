@@ -41,6 +41,15 @@ directory "/etc/mysql" do
   mode 0755
 end
 
+# Temp fix, mysqld seems dependent on this
+directory "/etc/mysql/conf.d" do
+  owner "root"
+  group "root"
+  mode 0755
+  recursive true
+  action :create
+end
+
 # setup the data directory
 directory datadir do
   owner user
@@ -56,6 +65,7 @@ directory tmpdir do
   recursive true
   action :create
 end
+
 
 # define the service
 service "mysql" do
